@@ -20,7 +20,6 @@ math_functions = {
     "cos": math.cos,
     "tan": math.tan,
     "sqrt": math.sqrt,
-    "log": math.log,
     "abs": math.fabs
 }
 
