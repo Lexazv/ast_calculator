@@ -2,7 +2,6 @@ import ast
 import operator
 import math
 
-
 # Math operators dict
 operators = {
     ast.Add: operator.add,
