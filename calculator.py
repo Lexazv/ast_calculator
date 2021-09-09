@@ -31,7 +31,7 @@ constants = {
 
 
 def get_expr():
-    expr = ast.literal_eval(input("Enter string, containing math expression or 'stop' to stop calculator: "))
+    expr = str(input("Enter math expression or 'stop' to stop calculator: "))
     return expr
 
 
@@ -62,6 +62,8 @@ def main():
                 break
             expr_tree = parse_expr(expr)
             print(calc_expr(expr_tree))
+        except ZeroDivisionError:
+            print('ZerroDivisionError! Try again!')
         except Exception:
             print('An error occured! Try again!')
 
