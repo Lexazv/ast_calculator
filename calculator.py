@@ -16,11 +16,11 @@ operators = {
 
 # Math functions dict
 math_functions = {
-    "sin": math.sin,
-    "cos": math.cos,
-    "tan": math.tan,
-    "sqrt": math.sqrt,
-    "abs": math.fabs
+    'sin': math.sin,
+    'cos': math.cos,
+    'tan': math.tan,
+    'sqrt': math.sqrt,
+    'abs': math.fabs
 }
 
 # Math constants dict
@@ -31,7 +31,7 @@ constants = {
 
 
 def get_expr():
-    expr = str(input("Enter math expression or 'stop' to stop calculator: "))
+    expr = input("Enter math expression or 'stop' to stop calculator: ")
     return expr
 
 
@@ -58,14 +58,27 @@ def main():
     while True:
         try:
             expr = get_expr()
+
             if expr == 'stop':
                 break
+
             expr_tree = parse_expr(expr)
-            print(calc_expr(expr_tree))
+            result = round(calc_expr(expr_tree), 2)
+
         except ZeroDivisionError:
-            print('ZerroDivisionError! Try again!')
-        except Exception:
-            print('An error occured! Try again!')
+            print('Can not divide by zero.')
+
+        except (TypeError, ValueError):
+            print('Wrong input! Calculator does not support strings. Please enter expression without braces!')
+
+        except (KeyError, SyntaxError):
+            print('Wrong input! Please, enter math expression to calculate.')
+
+        except (OverflowError, MemoryError):
+            print('Result too large.')
+
+        else:
+            print(result)
 
 
 if __name__ == '__main__':
