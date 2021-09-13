@@ -1,6 +1,6 @@
-# String expression calculator
+# Calculator
 
-Alble to calculate string-formatted mathematical expressions.</br>
+Alble to calculate mathematical expressions.</br>
 
 Implemented math constants:
 
