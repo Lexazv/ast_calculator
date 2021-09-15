@@ -65,6 +65,9 @@ def main():
             expr_tree = parse_expr(expr)
             result = round(calc_expr(expr_tree), 2)
 
+        except KeyboardInterrupt:
+            break
+
         except ZeroDivisionError:
             print('Can not divide by zero.')
 
