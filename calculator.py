@@ -65,7 +65,7 @@ def main():
             expr_tree = parse_expr(expr)
             result = round(calc_expr(expr_tree), 2)
 
-        except KeyboardInterrupt:
+        except (KeyboardInterrupt, EOFError):
             break
 
         except ZeroDivisionError:
